@@ -6,10 +6,10 @@ namespace Goudkoorts
 {
     public abstract class Track
     {
-        protected Track _North { get; set; }
-        protected Track _South { get; set; }
-        protected Track _East { get; set; }
-        protected Track _West { get; set; }
+        public Track _North { get; set; }
+        public Track _South { get; set; }
+        public Track _East { get; set; }
+        public Track _West { get; set; }
         protected Direction _OutDirection { get; set; }
         protected Direction _InDirection { get; set; }
         protected abstract MoveableObject _Object { get; set; }
