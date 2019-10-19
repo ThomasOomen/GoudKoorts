@@ -6,6 +6,11 @@ namespace Goudkoorts
 {
     public class SimpleTrack : Track
     {
+        public SimpleTrack(String inputDirectionCar, String outputDirectionCar)
+        {
+
+        }
+
         protected override MoveableObject _Object { get; set; }
 
         protected override bool Add(MoveableObject Object)

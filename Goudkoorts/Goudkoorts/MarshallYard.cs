@@ -6,6 +6,11 @@ namespace Goudkoorts
 {
     public class MarshallYard : Track
     {
+        public MarshallYard(String inputDirectionCar, String outputDirectionCar)
+        {
+
+        }
+
         protected override MoveableObject _Object { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         protected override bool Add(MoveableObject Object)
