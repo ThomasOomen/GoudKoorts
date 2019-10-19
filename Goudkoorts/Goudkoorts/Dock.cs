@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Dock : Track
+    public class Dock : SimpleTrack
     {
         public Dock(Direction inDirection, Direction outDirection)
         {

@@ -15,7 +15,10 @@ namespace Goudkoorts
         protected abstract MoveableObject _Object { get; set; }
         protected abstract void Remove();
         protected abstract bool Add(MoveableObject Object);
-        protected abstract String ObjectToString();
+        protected abstract bool IsEmpty();
+        protected abstract Char ToChar();
+
+
         
         public Track TrackInDirection(Direction direction)
         {

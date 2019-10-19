@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class MarshallYard : Track
+    public class MarshallYard : SimpleTrack
     {
         public MarshallYard(Direction inDirection, Direction outDirection)
         {
