@@ -6,11 +6,6 @@ namespace Goudkoorts
 {
     public class Game
     {
-        private String _north;
-        private String _east;
-        private String _south;
-        private String _west;
-
         private WareHouse _wareHouse;
         private MarshallYard _marshallYard;
         private SwitchTrack _switchTrack;
@@ -18,95 +13,127 @@ namespace Goudkoorts
         private Cart _cart;
         private Ship _ship;
         private Dock _dock;
+        private EmptySpace _emptySpace;
+        private Track[,] game2DArray = new Track[12, 9];
 
         internal void initializeGame()
         {
-            _wareHouse = new WareHouse();
-            _wareHouse.Letter = "A";
-            _wareHouse = new WareHouse();
-            _wareHouse.Letter = "B";
-            _wareHouse = new WareHouse();
-            _wareHouse.Letter = "C";
+            game2DArray[0, 0] = _emptySpace = new EmptySpace();
+            game2DArray[1, 0] = _emptySpace = new EmptySpace();
+            game2DArray[2, 0] = _emptySpace = new EmptySpace();
+            game2DArray[3, 0] = _emptySpace = new EmptySpace();
+            game2DArray[4, 0] = _emptySpace = new EmptySpace();
+            game2DArray[5, 0] = _emptySpace = new EmptySpace();
+            game2DArray[6, 0] = _emptySpace = new EmptySpace();
+            game2DArray[7, 0] = _emptySpace = new EmptySpace();
+            game2DArray[8, 0] = _emptySpace = new EmptySpace();
+            game2DArray[9, 0] = _emptySpace = new EmptySpace();//lokatie voor schip
+            game2DArray[10, 0] = _emptySpace = new EmptySpace();
+            game2DArray[11, 0] = _emptySpace = new EmptySpace();
 
+            game2DArray[0, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);//uitgang
+            game2DArray[1, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[2, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[3, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[4, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[5, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[6, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[7, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[8, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[9, 1] = _dock = new Dock(Direction.East, Direction.West);
+            game2DArray[10, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[11, 1] = _simpleTrack = new SimpleTrack(Direction.South, Direction.West);
 
-            //vanaf warehouse a naar switchtrack 1
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
+            game2DArray[0, 2] = _emptySpace = new EmptySpace();
+            game2DArray[1, 2] = _emptySpace = new EmptySpace();
+            game2DArray[2, 2] = _emptySpace = new EmptySpace();
+            game2DArray[3, 2] = _emptySpace = new EmptySpace();
+            game2DArray[4, 2] = _emptySpace = new EmptySpace();
+            game2DArray[5, 2] = _emptySpace = new EmptySpace();
+            game2DArray[6, 2] = _emptySpace = new EmptySpace();
+            game2DArray[7, 2] = _emptySpace = new EmptySpace();
+            game2DArray[8, 2] = _emptySpace = new EmptySpace();
+            game2DArray[9, 2] = _emptySpace = new EmptySpace();
+            game2DArray[10, 2] = _emptySpace = new EmptySpace();
+            game2DArray[11, 2] = _simpleTrack = new SimpleTrack(Direction.South, Direction.North);
 
-            //vanaf switchtrack 1 naar switchtrack 2
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[0, 3] = _wareHouse = new WareHouse(); // A
+            game2DArray[1, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[2, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[3, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
+            game2DArray[4, 3] = _emptySpace = new EmptySpace();
+            game2DArray[5, 3] = _simpleTrack = new SimpleTrack(Direction.South, Direction.East);
+            game2DArray[6, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[7, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[8, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[9, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
+            game2DArray[10, 3] = _emptySpace = new EmptySpace();
+            game2DArray[11, 3] = _simpleTrack = new SimpleTrack(Direction.South, Direction.North);
 
-            // vanaf switchtrack 2 naar switchtrack 3
-            _simpleTrack = new SimpleTrack(Direction.South, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
+            game2DArray[0, 4] = _emptySpace = new EmptySpace();
+            game2DArray[1, 4] = _emptySpace = new EmptySpace();
+            game2DArray[2, 4] = _emptySpace = new EmptySpace();
+            game2DArray[3, 4] = // switch track 1
+			game2DArray[4, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[5, 4] = // switch track 2
+			game2DArray[6, 4] = _emptySpace = new EmptySpace();
+            game2DArray[7, 4] = _emptySpace = new EmptySpace();
+            game2DArray[8, 4] = _emptySpace = new EmptySpace();
+            game2DArray[9, 4] = //swtich track 3
+			game2DArray[10, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[11, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
 
-            //vanaf switchtrack 3 naar 'uitgang'
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
-            _simpleTrack = new SimpleTrack(Direction.South, Direction.North);   
-            _simpleTrack = new SimpleTrack(Direction.South, Direction.North);
-            _simpleTrack = new SimpleTrack(Direction.South, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[0, 5] = _wareHouse = new WareHouse(); // B
+            game2DArray[1, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[2, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[3, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
+            game2DArray[4, 5] = _emptySpace = new EmptySpace();
+            game2DArray[5, 5] = _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
+            game2DArray[6, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
+            game2DArray[7, 5] = _emptySpace = new EmptySpace();
+            game2DArray[8, 5] = _simpleTrack = new SimpleTrack(Direction.South, Direction.East);
+            game2DArray[9, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
+            game2DArray[10, 5] = _emptySpace = new EmptySpace();
+            game2DArray[11, 5] = 
 
-            //Dock
-            _dock = new Dock(Direction.East, Direction.West);
-            //Dock
+            game2DArray[0, 6] = _emptySpace = new EmptySpace();
+            game2DArray[1, 6] = _emptySpace = new EmptySpace();
+            game2DArray[2, 6] = _emptySpace = new EmptySpace();
+            game2DArray[3, 6] = _emptySpace = new EmptySpace();
+            game2DArray[4, 6] = _emptySpace = new EmptySpace();
+            game2DArray[5, 6] = _emptySpace = new EmptySpace();
+            game2DArray[6, 6] = // switch track 4
+            game2DArray[7, 6] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[8, 6] = // switch track 5
+            game2DArray[9, 6] = _emptySpace = new EmptySpace();
+            game2DArray[10, 6] = _emptySpace = new EmptySpace();
+            game2DArray[11, 6] = _emptySpace = new EmptySpace();
+             
+            game2DArray[0, 7] = _wareHouse = new WareHouse(); // C
+            game2DArray[1, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[2, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[3, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[4, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[5, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[6, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
+            game2DArray[7, 7] = _emptySpace = new EmptySpace();
+            game2DArray[8, 7] = _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
+            game2DArray[9, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[10, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[11, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
 
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West); // eind van het spelveld.
-
-            //vanaf warehouse b naar switchtrack 1
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
-
-            //vanaf switchtrack 2 naar switchtrack 4
-            _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
-
-            //vanaf switchtrack 4 naar switchtrack 5
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-
-            //vanaf switchtrack 5 naar switchtrack 3
-            _simpleTrack = new SimpleTrack(Direction.South, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
-
-            //vanaf warehouse c naar switchtrack 4
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
-            //vanaf switchtrack 5 naar marshallyard
-            _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
-            _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-
-            //Marshallyards
-            _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[0, 8] = _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
+            game2DArray[1, 8] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[2, 8] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[3, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[4, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[5, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[6, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[7, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[8, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[9, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[10, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[11, 8] = _emptySpace = new EmptySpace();
         }
     }
 }

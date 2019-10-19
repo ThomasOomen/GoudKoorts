@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class WareHouse
+    public class WareHouse : Track
     {
         private String _letter;
         public WareHouse()
@@ -22,6 +22,28 @@ namespace Goudkoorts
             {
                 Letter = value;
             }
+        }
+
+        protected override MoveableObject _Object { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        protected override bool Add(MoveableObject Object)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override bool IsEmpty()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void Remove()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override char ToChar()
+        {
+            throw new NotImplementedException();
         }
     }
 }
