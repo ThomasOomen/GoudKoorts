@@ -6,9 +6,10 @@ namespace Goudkoorts
 {
     public class SimpleTrack : Track
     {
-        public SimpleTrack(String inputDirectionCar, String outputDirectionCar)
+        public SimpleTrack(Direction inDirection, Direction outDirection)
         {
-
+            this._InDirection = inDirection;
+            this._OutDirection = outDirection;
         }
 
         protected override MoveableObject _Object { get; set; }

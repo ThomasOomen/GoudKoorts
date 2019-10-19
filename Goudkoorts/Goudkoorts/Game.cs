@@ -30,94 +30,83 @@ namespace Goudkoorts
 
 
             //vanaf warehouse a naar switchtrack 1
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "south");
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
 
             //vanaf switchtrack 1 naar switchtrack 2
-            _simpleTrack = new SimpleTrack("west", "east");
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
 
             // vanaf switchtrack 2 naar switchtrack 3
-            _simpleTrack = new SimpleTrack("south", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "south");
+            _simpleTrack = new SimpleTrack(Direction.South, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
 
             //vanaf switchtrack 3 naar 'uitgang'
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "north");
-            _simpleTrack = new SimpleTrack("south", "north");
-            _simpleTrack = new SimpleTrack("south", "north");
-            _simpleTrack = new SimpleTrack("south", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-            //hier moet de dock/crane aangemaakt worden
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "exit");
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
+            _simpleTrack = new SimpleTrack(Direction.South, Direction.North);   
+            _simpleTrack = new SimpleTrack(Direction.South, Direction.North);
+            _simpleTrack = new SimpleTrack(Direction.South, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+
+            //Dock
+            _dock = new Dock(Direction.East, Direction.West);
+            //Dock
+
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West); // eind van het spelveld.
 
             //vanaf warehouse b naar switchtrack 1
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "north");
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
 
             //vanaf switchtrack 2 naar switchtrack 4
-            _simpleTrack = new SimpleTrack("north", "east");
-            _simpleTrack = new SimpleTrack("west", "south");
+            _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
 
             //vanaf switchtrack 4 naar switchtrack 5
-            _simpleTrack = new SimpleTrack("west", "east");
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
 
             //vanaf switchtrack 5 naar switchtrack 3
-            _simpleTrack = new SimpleTrack("south", "east");
-            _simpleTrack = new SimpleTrack("west", "north");
+            _simpleTrack = new SimpleTrack(Direction.South, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
 
             //vanaf warehouse c naar switchtrack 4
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "north");
-
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
             //vanaf switchtrack 5 naar marshallyard
-            _simpleTrack = new SimpleTrack("north", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "east");
-            _simpleTrack = new SimpleTrack("west", "south");
-            _simpleTrack = new SimpleTrack("north", "east");
-            _simpleTrack = new SimpleTrack("east", "west");
-            _simpleTrack = new SimpleTrack("east", "west");
-
+            _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
+            _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
 
             //Marshallyards
-            _marshallYard = new MarshallYard("east", "west");
-            _marshallYard = new MarshallYard("east", "west");
-            _marshallYard = new MarshallYard("east", "west");
-            _marshallYard = new MarshallYard("east", "west");
-            _marshallYard = new MarshallYard("east", "west");
-            _marshallYard = new MarshallYard("east", "west");
-            _marshallYard = new MarshallYard("east", "west");
-            _marshallYard = new MarshallYard("east", "west");
-
-
-
-
-
-
-
-
-
-
-
+            _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            _marshallYard = new MarshallYard(Direction.East, Direction.West);
         }
-
-
     }
 }
