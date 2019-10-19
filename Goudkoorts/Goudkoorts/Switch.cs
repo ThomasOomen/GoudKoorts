@@ -4,8 +4,12 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class SwitchTrack : Track
+    public class SwitchTrack : SimpleTrack
     {
+        protected override string ObjectToString()
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

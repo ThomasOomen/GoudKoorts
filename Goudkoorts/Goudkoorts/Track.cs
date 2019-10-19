@@ -10,24 +10,18 @@ namespace Goudkoorts
         protected Track _South { get; set; }
         protected Track _East { get; set; }
         protected Track _West { get; set; }
-        protected Direction _Direction { get; set; }
+        protected Direction _OutDirection { get; set; }
+        protected Direction _InDirection { get; set; }
         protected abstract MoveableObject _Object { get; set; }
         protected abstract void Remove();
         protected abstract bool Add(MoveableObject Object);
         protected abstract String ObjectToString();
 
-        public Track(Track north, Track south, Track east, Track west, Direction direction)
-        {
-            _North = north;
-            _South = south;
-            _East = east;
-            _West = west;
-            _Direction = direction;
-        }
+
         
-        public Track TrackInDirection()
+        public Track TrackInDirection(Direction direction)
         {
-            switch(_Direction)
+            switch(direction)
             {
                 case Direction.North:
                     return _North;
