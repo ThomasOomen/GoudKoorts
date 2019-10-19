@@ -6,12 +6,6 @@ namespace Goudkoorts
 {
     public class SimpleTrack : Track
     {
-        public SimpleTrack(Direction inDirection, Direction outDirection)
-        {
-            this._InDirection = inDirection;
-            this._OutDirection = outDirection;
-        }
-
         protected override MoveableObject _Object { get; set; }
 
         public SimpleTrack(Direction inDirection, Direction outDirection)

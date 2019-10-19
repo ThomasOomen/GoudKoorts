@@ -6,27 +6,14 @@ namespace Goudkoorts
 {
     public class MarshallYard : SimpleTrack
     {
-        public MarshallYard(Direction inDirection, Direction outDirection)
+        public MarshallYard(Direction inDirection, Direction outDirection) : base(inDirection, outDirection)
         {
             this._InDirection = inDirection;
             this._OutDirection = outDirection;
         }
 
-        protected override MoveableObject _Object { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        protected override MoveableObject _Object { get; set; }
 
-        protected override bool Add(MoveableObject Object)
-        {
-            throw new NotImplementedException();
-        }
 
-        protected override string ObjectToString()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void Remove()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
