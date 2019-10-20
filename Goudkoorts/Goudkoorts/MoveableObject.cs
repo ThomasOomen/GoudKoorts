@@ -8,6 +8,7 @@ namespace Goudkoorts
     {
         protected Track _Track;
         protected abstract bool Move(Direction direction);
-        protected abstract String toString();
+        protected abstract Char ToChar();
+        protected abstract bool HasLoad();
     }
 }

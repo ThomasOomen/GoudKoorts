@@ -10,8 +10,7 @@ namespace Goudkoorts
         {
             throw new NotImplementedException();
         }
-
-        protected override string toString()
+        protected override bool HasLoad()
         {
             throw new NotImplementedException();
         }

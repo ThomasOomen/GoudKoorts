@@ -43,27 +43,27 @@ namespace Goudkoorts
         {
             if ((this._InDirection == Direction.North && this._OutDirection == Direction.South) || (this._InDirection == Direction.South && this._OutDirection == Direction.North))
             {
-                return (char)186;
+                return '║';
             }
             else if ((this._InDirection == Direction.West && this._OutDirection == Direction.East) || (this._InDirection == Direction.East && this._OutDirection == Direction.West))
             {
-                return (char)205;
+                return '═';
             }
             else if ((this._InDirection == Direction.West && this._OutDirection == Direction.North) || (this._InDirection == Direction.North && this._OutDirection == Direction.West))
             {
-                return (char)188;
+                return '╝';
             }
             else if ((this._InDirection == Direction.West && this._OutDirection == Direction.South) || (this._InDirection == Direction.South && this._OutDirection == Direction.West))
             {
-                return (char)187;
+                return '╗';
             }
             else if ((this._InDirection == Direction.East && this._OutDirection == Direction.North) || (this._InDirection == Direction.North && this._OutDirection == Direction.East))
             {
-                return (char)200;
+                return '╚';
             }
             else if ((this._InDirection == Direction.East && this._OutDirection == Direction.South) || (this._InDirection == Direction.South && this._OutDirection == Direction.East))
             {
-                return (char)201;
+                return '╔';
             }
             else
             {

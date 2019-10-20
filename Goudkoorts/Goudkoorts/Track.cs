@@ -17,7 +17,7 @@ namespace Goudkoorts
         protected abstract bool Add(MoveableObject Object);
         protected abstract bool IsEmpty();
         public abstract Char ToChar();
-
+        protected abstract ConsoleColor 
 
         
         public Track TrackInDirection(Direction direction)

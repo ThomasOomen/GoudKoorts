@@ -11,9 +11,6 @@ namespace Goudkoorts
             throw new NotImplementedException();
         }
 
-        protected override string toString()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
