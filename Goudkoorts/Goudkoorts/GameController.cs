@@ -32,7 +32,6 @@ namespace Goudkoorts
 
         public void GetGameField()
         {
-
             for (int y = 0; y < 9; y++)
             {
                 for (int x = 0; x < 12; x++)
@@ -41,8 +40,7 @@ namespace Goudkoorts
                 }
                 Console.WriteLine();
             }
-
-            
+            _view.Legend();
         }
     }
 }

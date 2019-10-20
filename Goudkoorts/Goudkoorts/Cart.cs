@@ -48,10 +48,5 @@ namespace Goudkoorts
                 return ConsoleColor.Green;
             }
         }
-
-        protected override char ToChar()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

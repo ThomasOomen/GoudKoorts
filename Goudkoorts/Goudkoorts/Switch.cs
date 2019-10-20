@@ -6,10 +6,12 @@ namespace Goudkoorts
 {
     public class SwitchTrack : SimpleTrack
     {
-        public SwitchTrack(Direction inDirection, Direction outDirection) : base(inDirection, outDirection)
+        public SwitchTrack(Direction inDirection, Direction outDirection, ConsoleColor color) : base(inDirection, outDirection)
         {
             this._InDirection = inDirection;
             this._OutDirection = outDirection;
+            this.ForegroundColor = color;
+            this.BackgroundColor = ConsoleColor.Black;
         }
 
         public void SwitchDirection()
@@ -31,6 +33,5 @@ namespace Goudkoorts
                 this._OutDirection = Direction.North;
             }
         }
-
     }
 }

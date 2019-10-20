@@ -6,6 +6,8 @@ namespace Goudkoorts
 {
     public abstract class Track
     {
+        internal readonly object ToBackGroundColor;
+
         public Track _North { get; set; }
         public Track _South { get; set; }
         public Track _East { get; set; }
@@ -17,8 +19,8 @@ namespace Goudkoorts
         public abstract bool Add(MoveableObject Object);
         public abstract bool IsEmpty();
         public abstract Char ToChar();
-        protected ConsoleColor BackgroundColor { get; set; }
-        protected ConsoleColor ForegroundColor { get; set; }
+        public ConsoleColor BackgroundColor { get; set; }
+        public ConsoleColor ForegroundColor { get; set; }
 
 
 

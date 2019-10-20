@@ -41,7 +41,25 @@ namespace Goudkoorts
         //print gamefield
         public void ShowGameField(Track track)
         {
+            Console.BackgroundColor = track.BackgroundColor;
+            Console.ForegroundColor = track.ForegroundColor;
             Console.Write(track.ToChar());
+        }
+
+        public void Legend()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Switch track 1: Knop 1");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Switch track 2: Knop 2");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("Switch track 3: Knop 3");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Switch track 4: Knop 4");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Switch track 5: Knop 5");
+            Console.ResetColor();
+
         }
     }
 }
