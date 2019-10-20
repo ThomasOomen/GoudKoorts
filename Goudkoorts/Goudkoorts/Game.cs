@@ -148,30 +148,41 @@ namespace Goudkoorts
             {
                 for (int x = 0; x < 12; x++)
                 {
-                    if (y == 0)
+                    if (y == 0 && x == 0)
                     {
+                        game2DArray[x, y]._East = game2DArray[x + 1, y];
                         game2DArray[x, y]._South = game2DArray[x, y + 1];
-                        if (x == 0)
-                        {
-                            game2DArray[x, y]._East = game2DArray[x + 1, y];
-                        }
-                        else if (x == 11)
-                        {
-                            game2DArray[x, y]._West = game2DArray[x - 1, y];
-                        }
                     }
-                    else if (y == 9)
+                    else if (y == 8 && x == 11)
                     {
+                        game2DArray[x, y]._West = game2DArray[x - 1, y];
                         game2DArray[x, y]._North = game2DArray[x, y - 1];
-                        if (x == 0)
-                        {
-                            game2DArray[x, y]._East = game2DArray[x + 1, y];
-                        }
-                        else if (x == 11)
-                        {
-                            game2DArray[x, y]._West = game2DArray[x - 1, y];
-                        }
                     }
+                    else if (y == 0)
+                    {
+                        game2DArray[x, y]._East = game2DArray[x + 1, y];
+                        game2DArray[x, y]._West = game2DArray[x - 1, y];
+                        game2DArray[x, y]._South = game2DArray[x, y + 1];
+                    }
+                    else if (y == 8)
+                    {
+                        game2DArray[x, y]._East = game2DArray[x + 1, y];
+                        game2DArray[x, y]._West = game2DArray[x - 1, y];
+                        game2DArray[x, y]._North = game2DArray[x, y -1];
+                    }
+                    else if (x == 0)
+                    {
+                        game2DArray[x, y]._East = game2DArray[x + 1, y];
+                        game2DArray[x, y]._South = game2DArray[x, y + 1];
+                        game2DArray[x, y]._North = game2DArray[x, y - 1];
+                    }
+                    else if (x == 11)
+                    {
+                        game2DArray[x, y]._West = game2DArray[x -1, y];
+                        game2DArray[x, y]._South = game2DArray[x, y + 1];
+                        game2DArray[x, y]._North = game2DArray[x, y - 1];
+                    }
+
                     else
                     {
                         game2DArray[x, y]._North = game2DArray[x, y - 1];
