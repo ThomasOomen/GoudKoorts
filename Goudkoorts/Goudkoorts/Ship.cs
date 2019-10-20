@@ -6,7 +6,11 @@ namespace Goudkoorts
 {
     public class Ship : MoveableObject
     {
-        protected override bool HasLoad()
+
+        protected override bool HasLoad();
+
+        public override ConsoleColor SetColor();
+
         {
             throw new NotImplementedException();
         }

@@ -12,9 +12,11 @@ namespace Goudkoorts
         {
             this._InDirection = inDirection;
             this._OutDirection = outDirection;
+            this.ForegroundColor = ConsoleColor.White;
+            this.BackgroundColor = ConsoleColor.Black;
         }
 
-        protected override bool Add(MoveableObject Object)
+        public override bool Add(MoveableObject Object)
         {
             if (IsEmpty())
             {
@@ -27,7 +29,7 @@ namespace Goudkoorts
             }
         }
 
-        protected override bool IsEmpty()
+        public override bool IsEmpty()
         {
             if (this._Object == null)
             {
@@ -72,7 +74,7 @@ namespace Goudkoorts
         }
 
 
-        protected override void Remove()
+        public override void Remove()
         {
             this._Object = null;
         }

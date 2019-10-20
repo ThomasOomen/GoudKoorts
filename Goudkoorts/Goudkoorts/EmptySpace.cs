@@ -16,17 +16,17 @@ namespace Goudkoorts
             }
         }
 
-        protected override bool Add(MoveableObject Object)
+        public override bool Add(MoveableObject Object)
         {
             return false;
         }
 
-        protected override bool IsEmpty()
+        public override bool IsEmpty()
         {
             return false;
         }
 
-        protected override void Remove()
+        public override void Remove()
         {
         }
 

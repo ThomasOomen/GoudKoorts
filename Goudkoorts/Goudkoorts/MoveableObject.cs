@@ -9,6 +9,8 @@ namespace Goudkoorts
         protected Track _Track;
         protected abstract bool Move(Direction direction);
         protected abstract Char ToChar();
-        protected abstract bool HasLoad();
+        protected bool HasLoad;
+        public abstract ConsoleColor SetColor();
+        
     }
 }
