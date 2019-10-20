@@ -39,9 +39,10 @@ namespace Goudkoorts
                 {
                     _view.ShowGameField(_game.GetGameField(x, y));
                 }
+                Console.WriteLine();
             }
 
-            Console.ReadLine();
+            
         }
     }
 }

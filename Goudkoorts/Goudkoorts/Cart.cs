@@ -14,5 +14,10 @@ namespace Goudkoorts
         {
             throw new NotImplementedException();
         }
+
+        protected override char ToChar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

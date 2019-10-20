@@ -6,11 +6,19 @@ namespace Goudkoorts
 {
     public class Ship : MoveableObject
     {
+        protected override bool HasLoad()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override bool Move(Direction direction)
         {
             throw new NotImplementedException();
         }
 
-        
+        protected override char ToChar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
