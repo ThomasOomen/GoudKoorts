@@ -10,14 +10,15 @@ namespace Goudkoorts
         public Track _South { get; set; }
         public Track _East { get; set; }
         public Track _West { get; set; }
-        protected Direction _OutDirection { get; set; }
-        protected Direction _InDirection { get; set; }
+        public Direction _OutDirection { get; set; }
+        public Direction _InDirection { get; set; }
         protected abstract MoveableObject _Object { get; set; }
-        protected abstract void Remove();
-        protected abstract bool Add(MoveableObject Object);
-        protected abstract bool IsEmpty();
+        public abstract void Remove();
+        public abstract bool Add(MoveableObject Object);
+        public abstract bool IsEmpty();
         public abstract Char ToChar();
-        protected abstract ConsoleColor 
+        protected ConsoleColor BackgroundColor { get; set; }
+        protected ConsoleColor ForegroundColor { get; set; }
 
         
         public Track TrackInDirection(Direction direction)

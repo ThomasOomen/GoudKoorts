@@ -19,17 +19,17 @@ namespace Goudkoorts
 
         protected override MoveableObject _Object { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        protected override bool Add(MoveableObject Object)
+        public override bool Add(MoveableObject Object)
         {
             throw new NotImplementedException();
         }
 
-        protected override bool IsEmpty()
+        public override bool IsEmpty()
         {
             throw new NotImplementedException();
         }
 
-        protected override void Remove()
+        public override void Remove()
         {
             throw new NotImplementedException();
         }
