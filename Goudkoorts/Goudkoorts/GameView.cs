@@ -34,8 +34,9 @@ namespace Goudkoorts
                     return 4;
                 case ConsoleKey.D5:
                     return 5;
+                default:
+                    return 0;
             }
-            return -1;
         }
 
         //print gamefield
@@ -59,6 +60,7 @@ namespace Goudkoorts
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Switch track 5: Knop 5");
             Console.ResetColor();
+            Console.WriteLine("Points:" + 10);
 
         }
     }

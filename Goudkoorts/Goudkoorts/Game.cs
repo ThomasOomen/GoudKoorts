@@ -16,6 +16,8 @@ namespace Goudkoorts
         private EmptySpace _emptySpace;
         private Track[,] game2DArray = new Track[12, 9];
 
+        public int Points { get; set; }
+
         internal void initializeGame()
         {
             game2DArray[0, 0] = _emptySpace = new EmptySpace();

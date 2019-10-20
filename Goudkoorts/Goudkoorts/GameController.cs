@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Goudkoorts
 {
@@ -8,6 +9,7 @@ namespace Goudkoorts
     {
         private GameView _view;
         private Game _game;
+        private Thread _ForeGroundGameLoop; 
 
         public GameController()
         {
@@ -21,13 +23,30 @@ namespace Goudkoorts
             _game = new Game();
             _view.Introduction();
             _game.initializeGame();
-            GetGameField();
+            _ForeGroundGameLoop = new Thread(new ThreadStart(ForeGroundGameLoop));
+            _ForeGroundGameLoop.Start();
+            runGame();
         }
 
-        //Main loop for running te game.
+        private void ForeGroundGameLoop()
+        {
+            while(true)
+            {
+                _view.GetInput(); //moet nog gebruikt worden om switchtracks te verplaatsen. 
+            }
+            
+        }
+
+        //Main loop for running te game. //hier in moet de functies voor de carts en ship komen te staan. 
         public void runGame()
         {
-            _view.GetInput();
+            while (true)
+            {
+                GetGameField();
+                Thread.Sleep(-20 * _game.Points + 1500); 
+                Console.Clear();
+                Thread.Sleep(100);
+            }
         }
 
         public void GetGameField()
