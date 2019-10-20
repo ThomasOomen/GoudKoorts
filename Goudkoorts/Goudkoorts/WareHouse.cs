@@ -34,9 +34,9 @@ namespace Goudkoorts
             throw new NotImplementedException();
         }
 
-        protected override char ToChar()
+        public override char ToChar()
         {
-            throw new NotImplementedException();
+            return char.Parse(_letter);
         }
     }
 }

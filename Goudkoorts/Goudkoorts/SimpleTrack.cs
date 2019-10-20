@@ -39,7 +39,7 @@ namespace Goudkoorts
             }
         }
 
-        protected override char ToChar()
+        public override char ToChar()
         {
             if ((this._InDirection == Direction.North && this._OutDirection == Direction.South) || (this._InDirection == Direction.South && this._OutDirection == Direction.North))
             {

@@ -16,7 +16,7 @@ namespace Goudkoorts
         protected abstract void Remove();
         protected abstract bool Add(MoveableObject Object);
         protected abstract bool IsEmpty();
-        protected abstract Char ToChar();
+        public abstract Char ToChar();
 
 
         

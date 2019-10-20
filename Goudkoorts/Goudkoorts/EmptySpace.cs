@@ -30,7 +30,7 @@ namespace Goudkoorts
         {
         }
 
-        protected override char ToChar()
+        public override char ToChar()
         {
             return ' ';
         }

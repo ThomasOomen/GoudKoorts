@@ -32,8 +32,16 @@ namespace Goudkoorts
 
         public void GetGameField()
         {
-            _view.ShowGameField(_game.GetGameField(8, 8));
-            _view.ShowGameField(_game.GetGameField(0, 5));
+
+            for (int y = 0; y < 9; y++)
+            {
+                for (int x = 0; x < 12; x++)
+                {
+                    _view.ShowGameField(_game.GetGameField(x, y));
+                }
+            }
+
+            Console.ReadLine();
         }
     }
 }

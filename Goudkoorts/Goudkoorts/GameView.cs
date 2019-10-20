@@ -41,32 +41,7 @@ namespace Goudkoorts
         //print gamefield
         public void ShowGameField(Track track)
         {
-            switch(track)
-            {
-                case EmptySpace emptySpace:
-                    Console.Write(" ");
-                    break;
-
-                case MarshallYard mashallYard:
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("_");
-                    Console.ResetColor();
-                    break;
-
-                case SwitchTrack switchTrack:
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("+");
-                    Console.ResetColor();
-                    break;
-
-                case WareHouse wareHouse:
-                    Console.Write(wareHouse.getLetter());
-                    break;
-
-                case SimpleTrack simpleTrack:
-                    Console.Write("_");
-                    break;
-            }
+            Console.Write(track.ToChar());
         }
     }
 }

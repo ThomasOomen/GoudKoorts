@@ -74,14 +74,14 @@ namespace Goudkoorts
             game2DArray[0, 4] = _emptySpace = new EmptySpace();
             game2DArray[1, 4] = _emptySpace = new EmptySpace();
             game2DArray[2, 4] = _emptySpace = new EmptySpace();
-            game2DArray[3, 4] = // switch track 1
-			game2DArray[4, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            game2DArray[5, 4] = // switch track 2
-			game2DArray[6, 4] = _emptySpace = new EmptySpace();
+            game2DArray[3, 4] = _emptySpace = new EmptySpace();// switch track 1
+            game2DArray[4, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[5, 4] = _emptySpace = new EmptySpace();// switch track 2
+            game2DArray[6, 4] = _emptySpace = new EmptySpace();
             game2DArray[7, 4] = _emptySpace = new EmptySpace();
             game2DArray[8, 4] = _emptySpace = new EmptySpace();
-            game2DArray[9, 4] = //swtich track 3
-			game2DArray[10, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
+            game2DArray[9, 4] = _emptySpace = new EmptySpace();//swtich track 3
+            game2DArray[10, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
             game2DArray[11, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
             game2DArray[0, 5] = _wareHouse = new WareHouse("B"); // B
             game2DArray[1, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
@@ -102,9 +102,9 @@ namespace Goudkoorts
             game2DArray[3, 6] = _emptySpace = new EmptySpace();
             game2DArray[4, 6] = _emptySpace = new EmptySpace();
             game2DArray[5, 6] = _emptySpace = new EmptySpace();
-            game2DArray[6, 6] = // switch track 4
+            game2DArray[6, 6] = _emptySpace = new EmptySpace();// switch track 4
             game2DArray[7, 6] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
-            game2DArray[8, 6] = // switch track 5
+            game2DArray[8, 6] = _emptySpace = new EmptySpace();// switch track 5
             game2DArray[9, 6] = _emptySpace = new EmptySpace();
             game2DArray[10, 6] = _emptySpace = new EmptySpace();
             game2DArray[11, 6] = _emptySpace = new EmptySpace();
@@ -122,19 +122,18 @@ namespace Goudkoorts
             game2DArray[10, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
             game2DArray[11, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.South);
 
-            game2DArray[0, 8] = _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
-            game2DArray[1, 8] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
-            game2DArray[2, 8] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[0, 8] = _emptySpace = new EmptySpace();
+            game2DArray[1, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
+            game2DArray[2, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
             game2DArray[3, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
             game2DArray[4, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
             game2DArray[5, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
             game2DArray[6, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
             game2DArray[7, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
             game2DArray[8, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            game2DArray[9, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            game2DArray[10, 8] = _marshallYard = new MarshallYard(Direction.East, Direction.West);
-            game2DArray[11, 8] = _emptySpace = new EmptySpace();
-
+            game2DArray[9, 8] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[10, 8] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
+            game2DArray[11, 8] = _simpleTrack = new SimpleTrack(Direction.North, Direction.East);
         }
 
         public Track GetGameField(int x, int y)
