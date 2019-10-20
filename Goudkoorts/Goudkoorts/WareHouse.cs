@@ -7,21 +7,14 @@ namespace Goudkoorts
     public class WareHouse : Track
     {
         private String _letter;
-        public WareHouse()
+        public WareHouse(string value)
         {
-
+            this._letter = value;
         }
-        public String Letter
-        {
-            get
-            {
-                return _letter;
-            }
 
-            set
-            {
-                Letter = value;
-            }
+        public String getLetter()
+        {
+            return _letter;
         }
 
         protected override MoveableObject _Object { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
