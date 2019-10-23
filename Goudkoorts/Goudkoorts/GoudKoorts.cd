@@ -3,7 +3,7 @@
   <Class Name="Goudkoorts.GameController">
     <Position X="4.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAgAAACAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAQAAUAAAAAAAAAAgAAACAAAAAAAAQ=</HashCode>
       <FileName>GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -21,32 +21,31 @@
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Goudkoorts.Game">
+  <Class Name="Goudkoorts.Game" Collapsed="true">
     <Position X="4.25" Y="7.5" Width="1.5" />
     <AssociationLine Name="_switchTrack" Type="Goudkoorts.SwitchTrack" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.75" Y="8.462" />
-        <Point X="6.917" Y="8.462" Type="JumpStart" />
-        <Point X="7.083" Y="8.462" Type="JumpEnd" />
-        <Point X="8.917" Y="8.462" Type="JumpStart" />
-        <Point X="9.083" Y="8.462" Type="JumpEnd" />
-        <Point X="11" Y="8.462" />
+        <Point X="5.75" Y="7.645" />
+        <Point X="11" Y="7.645" />
         <Point X="11" Y="11" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="_simpleTrack" Type="Goudkoorts.SimpleTrack" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.75" Y="8.186" />
-        <Point X="6.917" Y="8.186" Type="JumpStart" />
-        <Point X="7.083" Y="8.186" Type="JumpEnd" />
-        <Point X="8.917" Y="8.186" Type="JumpStart" />
-        <Point X="9.083" Y="8.186" Type="JumpEnd" />
-        <Point X="13.25" Y="8.186" />
+        <Point X="5.75" Y="7.603" />
+        <Point X="13.25" Y="7.603" />
         <Point X="13.25" Y="11" />
       </Path>
     </AssociationLine>
+    <AssociationLine Name="_dock" Type="Goudkoorts.Dock" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="7.75" />
+        <Point X="9" Y="7.75" />
+        <Point X="9" Y="11" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAEEAAAAAAAAAAAAAAAAAAAgAAAAgAAAgBAAA=</HashCode>
+      <HashCode>AAACAAACEEEAgAARAAAIAAEAAAAgAwAAAAgAEAoBAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -66,14 +65,14 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAACAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAACEAAAAAEAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>MoveableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Track" Collapsed="true">
     <Position X="9.25" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAgAAAAAgAgAAAABBQAAgAAAAACAAAAAAoAAAAA=</HashCode>
+      <HashCode>AAJAAAgAAAAggAkAAAABBQAACAAAAACAAAAAAoAEAAA=</HashCode>
       <FileName>Track.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -83,16 +82,8 @@
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
-    <InheritanceLine Type="Goudkoorts.Track" FixedFromPoint="true">
-      <Path>
-        <Point X="10.062" Y="13.5" />
-        <Point X="10.062" Y="12.675" />
-        <Point X="7" Y="12.675" />
-        <Point X="7" Y="11.691" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAgAAAAAAABAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MarshallYard.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -102,16 +93,8 @@
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
-    <InheritanceLine Type="Goudkoorts.Track" FixedFromPoint="true">
-      <Path>
-        <Point X="10.062" Y="13.5" />
-        <Point X="10.062" Y="12.675" />
-        <Point X="9" Y="12.675" />
-        <Point X="9" Y="11.691" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAgAAAAAAABAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAgAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Dock.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -121,7 +104,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Switch.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -134,13 +117,13 @@
     <InheritanceLine Type="Goudkoorts.Track" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
         <Point X="10.062" Y="13.5" />
-        <Point X="10.062" Y="12.66" />
-        <Point X="13.25" Y="12.66" />
+        <Point X="10.062" Y="12.743" />
+        <Point X="13.25" Y="12.743" />
         <Point X="13.25" Y="11.691" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAgAAAAAAABAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAJAAAAAAAAAgAEAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SimpleTrack.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -150,7 +133,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -160,7 +143,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -171,15 +154,27 @@
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
+    <InheritanceLine Type="Goudkoorts.Track" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="10.062" Y="13.5" />
+        <Point X="10.062" Y="13.252" />
+        <Point X="10.073" Y="13.252" />
+        <Point X="10.073" Y="12.75" />
+        <Point X="4.333" Y="12.75" Type="JumpStart" />
+        <Point X="4.167" Y="12.75" Type="JumpEnd" />
+        <Point X="1.75" Y="12.75" />
+        <Point X="1.75" Y="9.059" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAJAAAAAAAAAgAEAAAAABAAACAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WareHouse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.GameView">
     <Position X="4.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAEAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAABEAAA=</HashCode>
       <FileName>GameView.cs</FileName>
     </TypeIdentifier>
   </Class>

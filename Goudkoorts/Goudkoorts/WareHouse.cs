@@ -6,15 +6,12 @@ namespace Goudkoorts
 {
     public class WareHouse : Track
     {
-        private String _letter;
-        public WareHouse(string value)
+        private Char _DisplayChar;
+        public WareHouse(Char value)
         {
-            this._letter = value;
-        }
-
-        public String getLetter()
-        {
-            return _letter;
+            _DisplayChar = value;
+            this.ForegroundColor = ConsoleColor.White;
+            this.BackgroundColor = ConsoleColor.Black;
         }
 
         protected override MoveableObject _Object { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -36,7 +33,7 @@ namespace Goudkoorts
 
         public override char ToChar()
         {
-            return char.Parse(_letter);
+            return _DisplayChar;
         }
     }
 }

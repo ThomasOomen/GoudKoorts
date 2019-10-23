@@ -22,9 +22,12 @@ namespace Goudkoorts
             _view = new GameView();
             _game = new Game();
             _view.Introduction();
+            _game.CreateWareHouseList();
             _game.initializeGame();
             _ForeGroundGameLoop = new Thread(new ThreadStart(ForeGroundGameLoop));
             _ForeGroundGameLoop.Start();
+            
+            Console.WriteLine("WAREHOUSE LIST" + _game.GetWareHouseList().Count);
             runGame();
         }
 
@@ -42,6 +45,7 @@ namespace Goudkoorts
         {
             while (true)
             {
+                _game.SpawnCarts();
                 GetGameField();
                 Thread.Sleep(-20 * _game.Points + 1500); 
                 Console.Clear();
