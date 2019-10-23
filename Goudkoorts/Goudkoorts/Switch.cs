@@ -14,7 +14,7 @@ namespace Goudkoorts
             this.BackgroundColor = ConsoleColor.Black;
         }
 
-        public void SwitchDirection()
+        public void SwitchOutDirection()
         {
             if (this._OutDirection == Direction.East)
             {
@@ -31,6 +31,26 @@ namespace Goudkoorts
             else
             {
                 this._OutDirection = Direction.North;
+            }
+        }
+
+        public void SwitchInDirection()
+        {
+            if (this._InDirection == Direction.East)
+            {
+                this._InDirection = Direction.West;
+            }
+            else if (this._InDirection == Direction.West)
+            {
+                this._InDirection = Direction.East;
+            }
+            else if (this._InDirection == Direction.North)
+            {
+                this._InDirection = Direction.South;
+            }
+            else
+            {
+                this._InDirection = Direction.North;
             }
         }
     }

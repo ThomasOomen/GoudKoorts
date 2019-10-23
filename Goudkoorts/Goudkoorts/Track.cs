@@ -22,8 +22,6 @@ namespace Goudkoorts
         public ConsoleColor BackgroundColor { get; set; }
         public ConsoleColor ForegroundColor { get; set; }
 
-
-
         public Track TrackInDirection(Direction direction)
         {
             switch(direction)

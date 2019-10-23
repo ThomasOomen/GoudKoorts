@@ -155,7 +155,6 @@ namespace Goudkoorts
                     Console.WriteLine("NIEUWE CART AANGEMAAKT");
                 }
             }
-
         }
 
         private int SpawnChance()
@@ -229,5 +228,37 @@ namespace Goudkoorts
                 }
             }
         }
+    
+        public void SwitchDirections(ConsoleKey input)
+        {
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    SwitchTrack switchtrack_1 = (SwitchTrack)game2DArray[3, 4];
+                    switchtrack_1.SwitchInDirection();
+                    break;
+                case ConsoleKey.D2:
+                    SwitchTrack switchtrack_2 = (SwitchTrack)game2DArray[5, 4];
+                    switchtrack_2.SwitchOutDirection();
+                    break;
+                case ConsoleKey.D3:
+                    SwitchTrack switchtrack_3 = (SwitchTrack)game2DArray[9, 4];
+                    switchtrack_3.SwitchInDirection();
+                    break;
+                case ConsoleKey.D4:
+                    SwitchTrack switchtrack_4 = (SwitchTrack)game2DArray[6, 6];
+                    switchtrack_4.SwitchInDirection();
+                    break;
+                case ConsoleKey.D5:
+                    SwitchTrack switchtrack_5 = (SwitchTrack)game2DArray[8, 6];
+                    switchtrack_5.SwitchOutDirection();
+                    break;
+                default:
+                    break;
+            }
+        }
+    
     }
+
+
 }

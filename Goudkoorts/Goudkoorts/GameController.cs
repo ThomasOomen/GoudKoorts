@@ -35,9 +35,14 @@ namespace Goudkoorts
         {
             while(true)
             {
-                _view.GetInput(); //moet nog gebruikt worden om switchtracks te verplaatsen. 
+                TrackSwitcher(_view.GetInput()); //moet nog gebruikt worden om switchtracks te verplaatsen.
             }
             
+        }
+
+        private void TrackSwitcher(ConsoleKey input)
+        {
+            _game.SwitchDirections(input);
         }
 
         //Main loop for running te game. //hier in moet de functies voor de carts en ship komen te staan. 
