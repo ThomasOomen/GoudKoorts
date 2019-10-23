@@ -14,9 +14,9 @@ namespace Goudkoorts
         public Track _West { get; set; }
         public Direction _OutDirection { get; set; }
         public Direction _InDirection { get; set; }
-        protected abstract MoveableObject _Object { get; set; }
+        protected abstract Cart _Cart { get; set; }
         public abstract void Remove();
-        public abstract bool Add(MoveableObject Object);
+        public abstract bool Add(Cart cart);
         public abstract bool IsEmpty();
         public abstract Char ToChar();
         public ConsoleColor BackgroundColor { get; set; }

@@ -4,21 +4,16 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Ship : MoveableObject
+    public class Ship
     {
-        public override ConsoleColor SetColor()
+
+        public ConsoleColor SetColor()
         {
             throw new NotImplementedException();
         }
 
-        //protected override bool HasLoad();
 
-        protected override bool Move(Direction direction)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override char ToChar()
+        public char ToChar()
         {
             throw new NotImplementedException();
         }

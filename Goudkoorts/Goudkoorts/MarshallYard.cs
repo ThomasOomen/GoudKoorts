@@ -14,7 +14,7 @@ namespace Goudkoorts
             this.BackgroundColor = ConsoleColor.Black;
         }
 
-        protected override MoveableObject _Object { get; set; }
+        protected override Cart _Cart { get; set; }
 
 
     }
