@@ -13,9 +13,9 @@ namespace Goudkoorts
             this.ForegroundColor = color;
             this.BackgroundColor = ConsoleColor.Black;
         }
-        protected override MoveableObject _Object { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        protected override Cart _Cart { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public override bool Add(MoveableObject Object)
+        public override bool Add(Cart cart)
         {
             throw new NotImplementedException();
         }

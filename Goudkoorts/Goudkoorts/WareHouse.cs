@@ -14,21 +14,35 @@ namespace Goudkoorts
             this.BackgroundColor = ConsoleColor.Black;
         }
 
-        protected override MoveableObject _Object { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        protected override Cart _Cart { get; set; }
 
-        public override bool Add(MoveableObject Object)
+        public override bool Add(Cart cart)
         {
-            throw new NotImplementedException();
+            if(IsEmpty())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override bool IsEmpty()
         {
-            throw new NotImplementedException();
+            if(this._Cart == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override void Remove()
         {
-            throw new NotImplementedException();
+            this._Cart = null;
         }
 
         public override char ToChar()

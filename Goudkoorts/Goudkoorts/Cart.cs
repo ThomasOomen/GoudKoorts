@@ -42,15 +42,15 @@ namespace Goudkoorts
             return this._Track.ToChar();
         }
 
-        public ConsoleColor SetColor()
+        public void SetColor()
         {
             if (HasLoad)
             {
-                return ConsoleColor.Red;
+                this._Track.BackgroundColor = ConsoleColor.Red;
             }
             else
             {
-                return ConsoleColor.Green;
+                this._Track.BackgroundColor = ConsoleColor.Green;
             }
         }
     }

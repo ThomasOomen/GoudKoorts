@@ -150,7 +150,7 @@ namespace Goudkoorts
             {
                 if (_Random.Next(1, 100) <= SpawnChance())
                 {
-                    Cart cart = new Cart();
+                    Cart cart = new Cart(warehouse);
                     Console.WriteLine("Warehouse :" + warehouse.ToChar());
                     Console.WriteLine("NIEUWE CART AANGEMAAKT");
                 }
