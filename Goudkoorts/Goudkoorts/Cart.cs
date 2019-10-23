@@ -4,13 +4,18 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Cart : MoveableObject
+    public class Cart
     {
-        public Cart()
+
+        private Track _Track;
+        private bool HasLoad;
+
+        public Cart(Track track)
         {
+            this._Track = track;
             HasLoad = true;
         }
-        protected override bool Move(Direction direction)
+        public bool Move(Direction direction)
         {
             var nextTrack = this._Track.TrackInDirection(this._Track._OutDirection);
             if (nextTrack.TrackInDirection(nextTrack._InDirection) == this._Track)
@@ -32,12 +37,12 @@ namespace Goudkoorts
             }
         }
 
-        protected override char ToChar()
+        public char ToChar()
         {
             return this._Track.ToChar();
         }
 
-        public override ConsoleColor SetColor()
+        public ConsoleColor SetColor()
         {
             if (HasLoad)
             {

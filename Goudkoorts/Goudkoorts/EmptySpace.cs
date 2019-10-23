@@ -6,17 +6,17 @@ namespace Goudkoorts
 {
     class EmptySpace : Track
     {
-        protected override MoveableObject _Object
+        protected override Cart _Cart
         { get
             {
-                return (MoveableObject)null;
+                return (Cart)null;
             }
             set
             {
             }
         }
 
-        public override bool Add(MoveableObject Object)
+        public override bool Add(Cart cart)
         {
             return false;
         }

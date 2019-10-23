@@ -6,7 +6,7 @@ namespace Goudkoorts
 {
     public class SimpleTrack : Track
     {
-        protected override MoveableObject _Object { get; set; }
+        protected override Cart _Cart { get; set; }
 
         public SimpleTrack(Direction inDirection, Direction outDirection)
         {
@@ -16,11 +16,11 @@ namespace Goudkoorts
             this.BackgroundColor = ConsoleColor.Black;
         }
 
-        public override bool Add(MoveableObject Object)
+        public override bool Add(Cart cart)
         {
             if (IsEmpty())
             {
-                this._Object = Object;
+                this._Cart = cart;
                 return true;
             }
             else
@@ -31,7 +31,7 @@ namespace Goudkoorts
 
         public override bool IsEmpty()
         {
-            if (this._Object == null)
+            if (this._Cart == null)
             {
                 return true;
             }
@@ -76,7 +76,7 @@ namespace Goudkoorts
 
         public override void Remove()
         {
-            this._Object = null;
+            this._Cart = null;
         }
     }
 }
