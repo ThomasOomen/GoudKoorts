@@ -3,12 +3,11 @@
   <Class Name="Goudkoorts.GameController">
     <Position X="4.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAQAAUAAAAAAAAAAgAAACAACAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAAAAgABAQAAUAAAAAAAAAAgAAACAAAAAAAAQ=</HashCode>
       <FileName>GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_view" />
-      <Field Name="_game" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Program">
@@ -19,6 +18,114 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.MoveableObject">
+    <Position X="3.5" Y="13" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAACEAAAAAEAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>MoveableObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Track" Collapsed="true">
+    <Position X="9.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJAAAwAAQAgAAkAAAABBQAACAAAAACAAAAAAoAEAAA=</HashCode>
+      <FileName>Track.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.MarshallYard" Collapsed="true">
+    <Position X="6.25" Y="11" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarshallYard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Dock" Collapsed="true">
+    <Position X="8.25" Y="11" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.SwitchTrack" Collapsed="true">
+    <Position X="10.25" Y="11" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Switch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.SimpleTrack" Collapsed="true">
+    <Position X="12.5" Y="11" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="Goudkoorts.Track" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="10.062" Y="13.5" />
+        <Point X="10.062" Y="12.743" />
+        <Point X="13.25" Y="12.743" />
+        <Point X="13.25" Y="11.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAJAAAQAAQAAAAEAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleTrack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Cart" Collapsed="true">
+    <Position X="4.5" Y="11" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAACEAAAAAEAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Ship">
+    <Position X="2.75" Y="11" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAQAAQAAIAAgAAAAAAAA=</HashCode>
+      <FileName>Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.WareHouse">
+    <Position X="1" Y="7.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAJAAAQAAAAAAAEAAAAABAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WareHouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.GameView">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAABEAAA=</HashCode>
+      <FileName>GameView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Game" Collapsed="true">
@@ -45,7 +152,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACAAACEEEAgAARAAAIAAEAAAAgAwAAAAgAEAoBAAA=</HashCode>
+      <HashCode>CAACAAACEUEAgAARAAAIAAEAAAAgAwEAAAgAEAohAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -57,126 +164,6 @@
       <Field Name="_ship" />
       <Field Name="_dock" />
     </ShowAsAssociation>
-  </Class>
-  <Class Name="Goudkoorts.MoveableObject">
-    <Position X="3.5" Y="13" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAACEAAAAAEAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
-      <FileName>MoveableObject.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.Track" Collapsed="true">
-    <Position X="9.25" Y="13.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAJAAAgAAAAggAkAAAABBQAACAAAAACAAAAAAoAEAAA=</HashCode>
-      <FileName>Track.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.MarshallYard" Collapsed="true">
-    <Position X="6.25" Y="11" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MarshallYard.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.Dock" Collapsed="true">
-    <Position X="8.25" Y="11" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAgAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dock.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.SwitchTrack" Collapsed="true">
-    <Position X="10.25" Y="11" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
-      <FileName>Switch.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.SimpleTrack" Collapsed="true">
-    <Position X="12.5" Y="11" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <InheritanceLine Type="Goudkoorts.Track" ManuallyRouted="true" FixedFromPoint="true">
-      <Path>
-        <Point X="10.062" Y="13.5" />
-        <Point X="10.062" Y="12.743" />
-        <Point X="13.25" Y="12.743" />
-        <Point X="13.25" Y="11.691" />
-      </Path>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AAJAAAAAAAAAgAEAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SimpleTrack.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.Cart" Collapsed="true">
-    <Position X="4.5" Y="11" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
-      <FileName>Cart.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.Ship">
-    <Position X="2.75" Y="11" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
-      <FileName>Ship.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.WareHouse">
-    <Position X="1" Y="7.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <InheritanceLine Type="Goudkoorts.Track" ManuallyRouted="true" FixedFromPoint="true">
-      <Path>
-        <Point X="10.062" Y="13.5" />
-        <Point X="10.062" Y="13.252" />
-        <Point X="10.073" Y="13.252" />
-        <Point X="10.073" Y="12.75" />
-        <Point X="4.333" Y="12.75" Type="JumpStart" />
-        <Point X="4.167" Y="12.75" Type="JumpEnd" />
-        <Point X="1.75" Y="12.75" />
-        <Point X="1.75" Y="9.059" />
-      </Path>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AAJAAAAAAAAAgAEAAAAABAAACAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>WareHouse.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Goudkoorts.GameView">
-    <Position X="4.25" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAABEAAA=</HashCode>
-      <FileName>GameView.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

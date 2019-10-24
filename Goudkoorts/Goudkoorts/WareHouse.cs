@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class WareHouse : Track
+    public class WareHouse : SimpleTrack
     {
         private Char _DisplayChar;
-        public WareHouse(Char value)
+        public WareHouse(Char value, Direction inDirection, Direction outDirection) : base(inDirection, outDirection)
         {
             _DisplayChar = value;
             this.ForegroundColor = ConsoleColor.White;
@@ -36,6 +36,7 @@ namespace Goudkoorts
             }
             else
             {
+                this._Cart.SetColor();
                 return false;
             }
         }

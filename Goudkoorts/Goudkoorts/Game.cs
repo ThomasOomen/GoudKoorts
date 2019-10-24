@@ -10,6 +10,7 @@ namespace Goudkoorts
         private MarshallYard _marshallYard;
         private SwitchTrack _switchTrack;
         private SimpleTrack _simpleTrack;
+        private ExitTrack _exitTrack;
         private Cart _cart;
         private Ship _ship;
         private Dock _dock;
@@ -32,10 +33,11 @@ namespace Goudkoorts
             game2DArray[7, 0] = _emptySpace = new EmptySpace();
             game2DArray[8, 0] = _emptySpace = new EmptySpace();
             game2DArray[9, 0] = _emptySpace = new EmptySpace();//lokatie voor schip
+            _emptySpace.GetShip = _ship = new Ship();
             game2DArray[10, 0] = _emptySpace = new EmptySpace();
             game2DArray[11, 0] = _emptySpace = new EmptySpace();
 
-            game2DArray[0, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);//uitgang
+            game2DArray[0, 1] = _exitTrack = new ExitTrack(Direction.East, Direction.West);//uitgang
             game2DArray[1, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
             game2DArray[2, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
             game2DArray[3, 1] = _simpleTrack = new SimpleTrack(Direction.East, Direction.West);
@@ -61,7 +63,7 @@ namespace Goudkoorts
             game2DArray[10, 2] = _emptySpace = new EmptySpace();
             game2DArray[11, 2] = _simpleTrack = new SimpleTrack(Direction.South, Direction.North);
 
-            game2DArray[0, 3] = _wareHouse = new WareHouse('A'); // A
+            game2DArray[0, 3] = _wareHouse = new WareHouse('A', Direction.West, Direction.East); // A
             _WarehouseList.Add(_wareHouse);  
             game2DArray[1, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
             game2DArray[2, 3] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
@@ -87,7 +89,7 @@ namespace Goudkoorts
             game2DArray[9, 4] = _switchTrack = new SwitchTrack(Direction.North, Direction.East, ConsoleColor.DarkYellow);//switch track 3
             game2DArray[10, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
             game2DArray[11, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
-            game2DArray[0, 5] = _wareHouse = new WareHouse('B'); // B
+            game2DArray[0, 5] = _wareHouse = new WareHouse('B', Direction.West, Direction.East); // B
             _WarehouseList.Add(_wareHouse);
             game2DArray[1, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
             game2DArray[2, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
@@ -114,7 +116,7 @@ namespace Goudkoorts
             game2DArray[10, 6] = _emptySpace = new EmptySpace();
             game2DArray[11, 6] = _emptySpace = new EmptySpace();
              
-            game2DArray[0, 7] = _wareHouse = new WareHouse('C'); // C
+            game2DArray[0, 7] = _wareHouse = new WareHouse('C', Direction.West, Direction.East); // C
             _WarehouseList.Add(_wareHouse);
             game2DArray[1, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
             game2DArray[2, 7] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
@@ -151,12 +153,48 @@ namespace Goudkoorts
                 if (_Random.Next(1, 100) <= SpawnChance())
                 {
                     Cart cart = new Cart(warehouse);
+                    warehouse.Add(cart);
                     Console.WriteLine("Warehouse :" + warehouse.ToChar());
                     Console.WriteLine("NIEUWE CART AANGEMAAKT");
                 }
             }
         }
 
+        internal void NewShip()
+        {
+            EmptySpace Shipyard = (EmptySpace)game2DArray[9, 0];
+            if (_ship.IsFull())
+            {
+                if(_Random.Next(0, 2) != 0)
+                {
+                    Shipyard.GetShip = null;
+                    Points = Points + 10;
+                }
+            }
+            else if (Shipyard.GetShip == null)
+            {
+                if(_Random.Next(0, 2) != 0)
+                {
+                    Shipyard.GetShip = _ship = new Ship();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        internal void MoveCarts()
+        {
+            foreach(Track track in game2DArray)
+            {
+                track.MoveCart();
+                if(!track.IsEmpty())
+                {
+                    Console.WriteLine("Cart has moved");
+                }
+            }
+        }
         private int SpawnChance()
         {
             return (int)(0.05 * 50 + 5);
@@ -183,49 +221,36 @@ namespace Goudkoorts
             {
                 for (int x = 0; x < 12; x++)
                 {
-                    if (y == 0 && x == 0)
-                    {
-                        game2DArray[x, y]._East = game2DArray[x + 1, y];
-                        game2DArray[x, y]._South = game2DArray[x, y + 1];
-                    }
-                    else if (y == 8 && x == 11)
+                    if(x > 0)
                     {
                         game2DArray[x, y]._West = game2DArray[x - 1, y];
-                        game2DArray[x, y]._North = game2DArray[x, y - 1];
                     }
-                    else if (y == 0)
+                 
+                    if(x < 11)
                     {
                         game2DArray[x, y]._East = game2DArray[x + 1, y];
-                        game2DArray[x, y]._West = game2DArray[x - 1, y];
-                        game2DArray[x, y]._South = game2DArray[x, y + 1];
                     }
-                    else if (y == 8)
+
+                    if(y > 0)
                     {
-                        game2DArray[x, y]._East = game2DArray[x + 1, y];
-                        game2DArray[x, y]._West = game2DArray[x - 1, y];
-                        game2DArray[x, y]._North = game2DArray[x, y -1];
-                    }
-                    else if (x == 0)
-                    {
-                        game2DArray[x, y]._East = game2DArray[x + 1, y];
-                        game2DArray[x, y]._South = game2DArray[x, y + 1];
-                        game2DArray[x, y]._North = game2DArray[x, y - 1];
-                    }
-                    else if (x == 11)
-                    {
-                        game2DArray[x, y]._West = game2DArray[x -1, y];
-                        game2DArray[x, y]._South = game2DArray[x, y + 1];
                         game2DArray[x, y]._North = game2DArray[x, y - 1];
                     }
 
-                    else
+                    if(y < 8)
                     {
-                        game2DArray[x, y]._North = game2DArray[x, y - 1];
-                        game2DArray[x, y]._East = game2DArray[x + 1, y];
                         game2DArray[x, y]._South = game2DArray[x, y + 1];
-                        game2DArray[x, y]._West = game2DArray[x - 1, y];
                     }
+
                 }
+            }
+        }
+
+        public void DropLoadAtDock()
+        {
+            if(_dock.MoveCart())
+            {
+                _dock._Cart.Unload();
+                _ship.AddLoad();
             }
         }
     

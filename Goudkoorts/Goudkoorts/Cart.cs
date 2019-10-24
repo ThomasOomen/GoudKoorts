@@ -7,7 +7,7 @@ namespace Goudkoorts
     public class Cart
     {
 
-        private Track _Track;
+        private Track _Track { get; set; }
         private bool HasLoad;
 
         public Cart(Track track)
@@ -15,28 +15,19 @@ namespace Goudkoorts
             this._Track = track;
             HasLoad = true;
         }
-        public bool Move(Direction direction)
+
+        public Track Track
         {
-            var nextTrack = this._Track.TrackInDirection(this._Track._OutDirection);
-            if (nextTrack.TrackInDirection(nextTrack._InDirection) == this._Track)
+            get
             {
-                if (nextTrack.IsEmpty())
-                {
-                    nextTrack.Add(this);
-                    this._Track.Remove();
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return this._Track;
             }
-            else
+
+            set
             {
-                return false;
+                this.Track = value;
             }
         }
-
         public char ToChar()
         {
             return this._Track.ToChar();
@@ -52,6 +43,11 @@ namespace Goudkoorts
             {
                 this._Track.BackgroundColor = ConsoleColor.Green;
             }
+        }
+
+        public void Unload()
+        {
+            this.HasLoad = false;
         }
     }
 }

@@ -24,6 +24,7 @@ namespace Goudkoorts
             _view.Introduction();
             _game.CreateWareHouseList();
             _game.initializeGame();
+            _game.LinkTracks();
             _ForeGroundGameLoop = new Thread(new ThreadStart(ForeGroundGameLoop));
             _ForeGroundGameLoop.Start();
             
@@ -50,6 +51,7 @@ namespace Goudkoorts
         {
             while (true)
             {
+                _game.MoveCarts();
                 _game.SpawnCarts();
                 GetGameField();
                 Thread.Sleep(-20 * _game.Points + 1500); 

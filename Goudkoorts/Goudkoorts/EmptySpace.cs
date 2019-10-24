@@ -6,7 +6,8 @@ namespace Goudkoorts
 {
     class EmptySpace : Track
     {
-        protected override Cart _Cart
+        private Ship _Ship { get; set; }
+        public override Cart _Cart
         { get
             {
                 return (Cart)null;
@@ -16,6 +17,22 @@ namespace Goudkoorts
             }
         }
 
+        public Ship GetShip
+        {
+            get
+            {
+                return _Ship;
+            }
+            set
+            {
+                _Ship = value;
+            }
+        }
+        public override bool MoveCart()
+        {
+            return false;
+        }
+
         public override bool Add(Cart cart)
         {
             return false;
@@ -23,16 +40,31 @@ namespace Goudkoorts
 
         public override bool IsEmpty()
         {
-            return false;
+            if(_Ship != null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public override void Remove()
         {
+            this._Ship = null;
         }
 
         public override char ToChar()
         {
-            return ' ';
+            if (IsEmpty())
+            {
+                return ' ';
+            }
+            else
+            {
+                return _Ship.ToChar();
+            }
         }
     }
 }

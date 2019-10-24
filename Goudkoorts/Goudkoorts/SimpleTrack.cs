@@ -6,7 +6,7 @@ namespace Goudkoorts
 {
     public class SimpleTrack : Track
     {
-        protected override Cart _Cart { get; set; }
+        public override Cart _Cart { get; set; }
 
         public SimpleTrack(Direction inDirection, Direction outDirection)
         {
@@ -14,6 +14,28 @@ namespace Goudkoorts
             this._OutDirection = outDirection;
             this.ForegroundColor = ConsoleColor.White;
             this.BackgroundColor = ConsoleColor.Black;
+        }
+
+        public override bool MoveCart()
+        {
+            Track nextTrack = this.TrackInDirection(this._OutDirection);
+            if (nextTrack.TrackInDirection(nextTrack._InDirection) == this)
+            {
+                if (nextTrack.IsEmpty() && !this.IsEmpty())
+                {
+                        nextTrack.Add(this._Cart);
+                        this.Remove();
+                        return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override bool Add(Cart cart)
@@ -33,10 +55,12 @@ namespace Goudkoorts
         {
             if (this._Cart == null)
             {
+                this.BackgroundColor = ConsoleColor.Black;
                 return true;
             }
             else
             {
+                _Cart.SetColor();
                 return false;
             }
         }
