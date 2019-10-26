@@ -11,6 +11,7 @@ namespace Goudkoorts
         private SwitchTrack _switchTrack;
         private SimpleTrack _simpleTrack;
         private ExitTrack _exitTrack;
+        private Shipyard _shipyard;
         private Cart _cart;
         private Ship _ship;
         private Dock _dock;
@@ -32,8 +33,7 @@ namespace Goudkoorts
             game2DArray[6, 0] = _emptySpace = new EmptySpace();
             game2DArray[7, 0] = _emptySpace = new EmptySpace();
             game2DArray[8, 0] = _emptySpace = new EmptySpace();
-            game2DArray[9, 0] = _emptySpace = new EmptySpace();//lokatie voor schip
-            _emptySpace.GetShip = _ship = new Ship();
+            game2DArray[9, 0] = _shipyard = new Shipyard();//lokatie voor schip
             game2DArray[10, 0] = _emptySpace = new EmptySpace();
             game2DArray[11, 0] = _emptySpace = new EmptySpace();
 
@@ -101,7 +101,7 @@ namespace Goudkoorts
             game2DArray[8, 5] = _simpleTrack = new SimpleTrack(Direction.South, Direction.East);
             game2DArray[9, 5] = _simpleTrack = new SimpleTrack(Direction.West, Direction.North);
             game2DArray[10, 5] = _emptySpace = new EmptySpace();
-            game2DArray[11, 5] = 
+            game2DArray[11, 5] = _emptySpace = new EmptySpace();
 
             game2DArray[0, 6] = _emptySpace = new EmptySpace();
             game2DArray[1, 6] = _emptySpace = new EmptySpace();
@@ -160,29 +160,6 @@ namespace Goudkoorts
             }
         }
 
-        internal void NewShip()
-        {
-            EmptySpace Shipyard = (EmptySpace)game2DArray[9, 0];
-            if (_ship.IsFull())
-            {
-                if(_Random.Next(0, 2) != 0)
-                {
-                    Shipyard.GetShip = null;
-                    Points = Points + 10;
-                }
-            }
-            else if (Shipyard.GetShip == null)
-            {
-                if(_Random.Next(0, 2) != 0)
-                {
-                    Shipyard.GetShip = _ship = new Ship();
-                }
-            }
-            else
-            {
-                return;
-            }
-        }
 
         internal void MoveCarts()
         {
@@ -245,14 +222,6 @@ namespace Goudkoorts
             }
         }
 
-        public void DropLoadAtDock()
-        {
-            if(_dock.MoveCart())
-            {
-                _dock._Cart.Unload();
-                _ship.AddLoad();
-            }
-        }
     
         public void SwitchDirections(ConsoleKey input)
         {
@@ -282,7 +251,8 @@ namespace Goudkoorts
                     break;
             }
         }
-    
+        
+       
     }
 
 

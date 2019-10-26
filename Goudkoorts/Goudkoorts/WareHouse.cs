@@ -14,7 +14,7 @@ namespace Goudkoorts
             this.BackgroundColor = ConsoleColor.Black;
         }
 
-        protected override Cart _Cart { get; set; }
+        public override Cart _Cart { get; set; }
 
         public override bool Add(Cart cart)
         {
