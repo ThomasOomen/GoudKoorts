@@ -6,6 +6,12 @@ namespace Goudkoorts
 {
     public class GameView
     {
+        public GameController _Controller;
+
+        public GameView(GameController controller)
+        {
+            this._Controller = controller;
+        }
         //print game info
         public void Introduction()
         {
@@ -35,7 +41,7 @@ namespace Goudkoorts
 
         public void Legend()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Switch track 1: Knop 1");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Switch track 2: Knop 2");
@@ -46,7 +52,7 @@ namespace Goudkoorts
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Switch track 5: Knop 5");
             Console.ResetColor();
-            Console.WriteLine("Points:" + 10);
+            Console.WriteLine("Points:" + _Controller.getGameScore());
 
         }
     }

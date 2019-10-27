@@ -39,5 +39,17 @@ namespace Goudkoorts
                 return false;
             }
         }
+
+        public override void SetColor()
+        {
+            if (IsEmpty())
+            {
+                this.BackgroundColor = ConsoleColor.Black;
+            }
+            else
+            {
+                this._Cart.SetColor();
+            }
+        }
     }
 }

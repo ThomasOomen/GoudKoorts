@@ -19,7 +19,7 @@ namespace Goudkoorts
         //Initialize game, build playfield
         public void initializeGame()
         {
-            _view = new GameView();
+            _view = new GameView(this);
             _game = new Game();
             _view.Introduction();
             _game.CreateWareHouseList();
@@ -46,13 +46,16 @@ namespace Goudkoorts
             _game.SwitchDirections(input);
         }
 
-        //Main loop for running te game. //hier in moet de functies voor de carts en ship komen te staan. 
+        //Main loop for running the game. //hier in moet de functies voor de carts en ship komen te staan. 
         public void runGame()
         {
             while (true)
             {
                 _game.MoveCarts();
                 _game.SpawnCarts();
+                _game.LoadShip();
+                _game.DepartShip();
+                _game.updatePoints();
                 GetGameField();
                 Thread.Sleep(-20 * _game.Points + 1500); 
                 Console.Clear();
@@ -60,6 +63,10 @@ namespace Goudkoorts
             }
         }
 
+        public int getGameScore()
+        {
+            return _game.updatePoints();
+        }
         public void GetGameField()
         {
             for (int y = 0; y < 9; y++)

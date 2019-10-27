@@ -19,6 +19,7 @@ namespace Goudkoorts
         private Track[,] game2DArray = new Track[12, 9];
         private Random _Random;
         private List<WareHouse> _WarehouseList;
+        private List<Cart> _CartList;
 
         public int Points { get; set; }
 
@@ -80,7 +81,7 @@ namespace Goudkoorts
             game2DArray[0, 4] = _emptySpace = new EmptySpace();
             game2DArray[1, 4] = _emptySpace = new EmptySpace();
             game2DArray[2, 4] = _emptySpace = new EmptySpace();
-            game2DArray[3, 4] = _switchTrack = new SwitchTrack(Direction.South, Direction.East, ConsoleColor.Red);// switch track 1
+            game2DArray[3, 4] = _switchTrack = new SwitchTrack(Direction.South, Direction.East, ConsoleColor.Blue);// switch track 1
             game2DArray[4, 4] = _simpleTrack = new SimpleTrack(Direction.West, Direction.East);
             game2DArray[5, 4] = _switchTrack = new SwitchTrack(Direction.West, Direction.North, ConsoleColor.Green);// switch track 2
             game2DArray[6, 4] = _emptySpace = new EmptySpace();
@@ -144,6 +145,8 @@ namespace Goudkoorts
             game2DArray[11, 8] = _simpleTrack = new SimpleTrack(Direction.North, Direction.West);
 
             _Random = new Random();
+            Points = 0;
+            _CartList = new List<Cart>();
         }
 
         internal void SpawnCarts()
@@ -153,6 +156,7 @@ namespace Goudkoorts
                 if (_Random.Next(1, 100) <= SpawnChance())
                 {
                     Cart cart = new Cart(warehouse);
+                    _CartList.Add(cart);
                     warehouse._Cart = cart;
                     warehouse.Add(cart);
                     Console.WriteLine("Warehouse :" + warehouse.ToChar());
@@ -198,14 +202,9 @@ namespace Goudkoorts
 
         internal void MoveCarts()
         {
-            foreach(Track track in game2DArray)
+            foreach(Cart cart in _CartList)
             {
-                track.MoveCart();
-                
-                if(!track.IsEmpty())
-                {
-                    Console.WriteLine("Cart has moved");
-                }
+                cart.Track.MoveCart();
             }
         }
         private int SpawnChance()
@@ -288,7 +287,10 @@ namespace Goudkoorts
             }
         }
         
-       
+       public int updatePoints()
+        {
+            return Points;
+        }
     }
 
 

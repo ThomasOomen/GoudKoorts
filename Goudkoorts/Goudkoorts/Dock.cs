@@ -13,5 +13,17 @@ namespace Goudkoorts
             this.ForegroundColor = color;
             this.BackgroundColor = ConsoleColor.Black;
         }
+
+        public override void SetColor()
+        {
+            if (IsEmpty())
+            {
+                this.BackgroundColor = ConsoleColor.Black;
+            }
+            else
+            {
+                this._Cart.SetColor();
+            }
+        }
     }
 }

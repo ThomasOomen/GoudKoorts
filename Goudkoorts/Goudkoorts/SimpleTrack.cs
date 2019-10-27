@@ -23,6 +23,7 @@ namespace Goudkoorts
                 if (nextTrack.IsEmpty() && !this.IsEmpty())
                 {
                         nextTrack.Add(this._Cart);
+                        this._Cart.Track = nextTrack;
                         nextTrack.SetColor();
                         this.Remove();
                         this.SetColor();

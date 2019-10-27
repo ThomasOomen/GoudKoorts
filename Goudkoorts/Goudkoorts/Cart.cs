@@ -26,7 +26,7 @@ namespace Goudkoorts
 
             set
             {
-                this.Track = value;
+                this._Track = value;
             }
         }
         public char ToChar()
