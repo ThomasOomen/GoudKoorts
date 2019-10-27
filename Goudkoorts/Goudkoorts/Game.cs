@@ -159,15 +159,13 @@ namespace Goudkoorts
                     _CartList.Add(cart);
                     warehouse._Cart = cart;
                     warehouse.Add(cart);
-                    Console.WriteLine("Warehouse :" + warehouse.ToChar());
-                    Console.WriteLine("NIEUWE CART AANGEMAAKT");
                 }
             }
         }
 
         internal void LoadShip()
         {
-            if (_dock._Cart != null)
+            if (_dock._Cart != null && !_shipyard._Ship.IsFull())
             {
                 _dock._Cart.Unload();
                 _shipyard._Ship.AddLoad();

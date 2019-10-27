@@ -41,6 +41,7 @@ namespace Goudkoorts
 
         public void Legend()
         {
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Switch track 1: Knop 1");
             Console.ForegroundColor = ConsoleColor.Green;
