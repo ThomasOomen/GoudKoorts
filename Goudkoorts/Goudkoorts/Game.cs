@@ -160,6 +160,40 @@ namespace Goudkoorts
             }
         }
 
+        internal void LoadShip()
+        {
+            if (_dock._Cart != null)
+            {
+                _dock._Cart.Unload();
+                _shipyard._Ship.AddLoad();
+                Points = Points + 1;
+            }
+        }
+
+        internal void DepartShip()
+        {
+            if (_shipyard._Ship.IsFull())
+            {
+                Random r = new Random();
+                if (r.Next(0, 2) != 0)
+                {
+                    _shipyard._Ship = null;
+                    Points = Points + 10;
+                }
+            }
+        }
+
+        internal void ArriveShip()
+        {
+            if (_shipyard.IsEmpty())
+            {
+                Random r = new Random();
+                if (r.Next(0, 2) != 0)
+                {
+                    _shipyard._Ship = new Ship();
+                }
+            }
+        }
 
         internal void MoveCarts()
         {

@@ -12,6 +12,8 @@ namespace Goudkoorts
         public Shipyard()
         {
             _Ship = new Ship();
+            this.ForegroundColor = ConsoleColor.White;
+            this.BackgroundColor = ConsoleColor.Black;
         }
 
         public override bool Add(Cart cart)
@@ -36,28 +38,10 @@ namespace Goudkoorts
             return false;
         }
         
-        public void NewShip()
-        {
-            if (IsEmpty())
-            {
-                Random r = new Random();
-                if (r.Next(0, 2) != 0)
-                {
-                    this._Ship = new Ship();
-                }
-            }
-        }
 
         public override void Remove()
         {
-            if (_Ship.IsFull())
-            {
-                Random r = new Random();
-                if (r.Next(0, 2) != 0)
-                {
-                    _Ship = null;
-                }
-            }
+            this._Ship = null;
         }
 
         public override char ToChar()
