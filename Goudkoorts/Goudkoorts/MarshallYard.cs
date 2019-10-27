@@ -24,7 +24,9 @@ namespace Goudkoorts
                 if (nextTrack.IsEmpty())
                 {
                     nextTrack.Add(this._Cart);
+                    nextTrack.SetColor();
                     this.Remove();
+                    this.SetColor();
                     return true;
                 }
                 else

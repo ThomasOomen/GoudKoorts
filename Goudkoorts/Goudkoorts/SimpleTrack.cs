@@ -12,8 +12,7 @@ namespace Goudkoorts
         {
             this._InDirection = inDirection;
             this._OutDirection = outDirection;
-            this.ForegroundColor = ConsoleColor.White;
-            this.BackgroundColor = ConsoleColor.Black;
+            this.SetColor();
         }
 
         public override bool MoveCart()
@@ -24,7 +23,9 @@ namespace Goudkoorts
                 if (nextTrack.IsEmpty() && !this.IsEmpty())
                 {
                         nextTrack.Add(this._Cart);
+                        nextTrack.SetColor();
                         this.Remove();
+                        this.SetColor();
                         return true;
                 }
                 else
@@ -55,16 +56,26 @@ namespace Goudkoorts
         {
             if (this._Cart == null)
             {
-                this.BackgroundColor = ConsoleColor.Black;
                 return true;
             }
             else
             {
-                _Cart.SetColor();
                 return false;
             }
         }
 
+        public override void SetColor()
+        {
+            if (IsEmpty())
+            {
+                BackgroundColor = ConsoleColor.Black;
+                ForegroundColor = ConsoleColor.White;
+            }
+            else
+            {
+                this._Cart.SetColor();
+            }
+        }
         public override char ToChar()
         {
             if ((this._InDirection == Direction.North && this._OutDirection == Direction.South) || (this._InDirection == Direction.South && this._OutDirection == Direction.North))

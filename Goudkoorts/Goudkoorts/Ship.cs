@@ -14,7 +14,18 @@ namespace Goudkoorts
         }
         public ConsoleColor SetColor()
         {
-            throw new NotImplementedException();
+            if (Counter < 5)
+            {
+                return ConsoleColor.Green;
+            }
+            else if (Counter > 5 && Counter < 10)
+            {
+                return ConsoleColor.Yellow;
+            }
+            else
+            {
+                return ConsoleColor.Red;
+            }
         }
 
         public bool AddLoad()

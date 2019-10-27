@@ -12,8 +12,7 @@ namespace Goudkoorts
         public Shipyard()
         {
             _Ship = new Ship();
-            this.ForegroundColor = ConsoleColor.White;
-            this.BackgroundColor = ConsoleColor.Black;
+            SetColor();
         }
 
         public override bool Add(Cart cart)
@@ -53,6 +52,20 @@ namespace Goudkoorts
             else
             {
                 return _Ship.ToChar();
+            }
+        }
+
+        public override void SetColor()
+        {
+            if (IsEmpty())
+            {
+                BackgroundColor = ConsoleColor.Black;
+                ForegroundColor = ConsoleColor.White;
+            }
+            else
+            {
+                BackgroundColor = ConsoleColor.Black;
+                ForegroundColor = this._Ship.SetColor();
             }
         }
     }

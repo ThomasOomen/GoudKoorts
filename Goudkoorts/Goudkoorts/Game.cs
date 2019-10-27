@@ -153,6 +153,7 @@ namespace Goudkoorts
                 if (_Random.Next(1, 100) <= SpawnChance())
                 {
                     Cart cart = new Cart(warehouse);
+                    warehouse._Cart = cart;
                     warehouse.Add(cart);
                     Console.WriteLine("Warehouse :" + warehouse.ToChar());
                     Console.WriteLine("NIEUWE CART AANGEMAAKT");
@@ -200,6 +201,7 @@ namespace Goudkoorts
             foreach(Track track in game2DArray)
             {
                 track.MoveCart();
+                
                 if(!track.IsEmpty())
                 {
                     Console.WriteLine("Cart has moved");

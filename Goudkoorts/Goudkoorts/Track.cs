@@ -21,6 +21,7 @@ namespace Goudkoorts
         public abstract Char ToChar();
         public ConsoleColor BackgroundColor { get; set; }
         public ConsoleColor ForegroundColor { get; set; }
+        public abstract void SetColor();
 
         public abstract bool MoveCart();
         public Track TrackInDirection(Direction direction)

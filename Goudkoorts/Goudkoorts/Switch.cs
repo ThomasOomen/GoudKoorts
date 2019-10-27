@@ -11,9 +11,20 @@ namespace Goudkoorts
             this._InDirection = inDirection;
             this._OutDirection = outDirection;
             this.ForegroundColor = color;
-            this.BackgroundColor = ConsoleColor.Black;
+            SetColor();
         }
 
+        public override void SetColor()
+        {
+            if(IsEmpty())
+            {
+                this.BackgroundColor = ConsoleColor.Black;
+            }
+            else
+            {
+                this._Cart.SetColor();
+            }
+        }
         public void SwitchOutDirection()
         {
             if (this._OutDirection == Direction.East)

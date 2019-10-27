@@ -14,6 +14,7 @@ namespace Goudkoorts
         {
             this._Track = track;
             HasLoad = true;
+            SetColor();
         }
 
         public Track Track

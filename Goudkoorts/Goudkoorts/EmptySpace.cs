@@ -40,5 +40,10 @@ namespace Goudkoorts
         {
                 return ' ';
         }
+
+        public override void SetColor()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
